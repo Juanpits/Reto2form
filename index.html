@@ -34,6 +34,7 @@
 
 <body>
 <h1> Proyecto Fincas </h1>
+<h2>Tabla Farm</h2>
 <div id="resultado"></div>
 <button onclick="traerInformacion()"> Consultar </button>
 
@@ -47,6 +48,20 @@
 
 <button onclick="guardarInformacion()">Guardar!</button>
 <button onclick="editarInformacion()">Actualizar!</button>
+
+<h2>Tabla Client</h2>
+<div id="resultadoCliente"></div>
+<button onclick="traerInformacionCliente()"> Consultar </button>
+
+<div>
+    <input type="number" id="idCliente" placeholder="id">
+    <input type="text" id="nameCliente" placeholder="nameCliente">
+    <input type="text" id="email" placeholder="email">
+    <input type="number" id="age" placeholder="age">
+</div>
+
+<button onclick="guardarInformacionCliente()">Guardar!</button>
+<button onclick="editarInformacionCliente()">Actualizar!</button>
 
 </body>
 
