@@ -16,13 +16,12 @@ function pintarRespuesta(items){
     let myTable ="<table>";
     for(i=0;i<items.length;i++){
         myTable+="<tr>";
-        // myTable+="<td>"+items[i].id+"</td>";
         myTable+="<td>"+items[i].address+"</td>";
         myTable+="<td>"+items[i].exension+"</td>";
         myTable+="<td>"+items[i].category_id+"</td>";
         myTable+="<td>"+items[i].name+"</td>";
-        myTable+="<td> <button onclick='borrarElemento("+items[i].id+")'>Borrar</button>";
-        myTable+="<td> <button onclick='obtenerItemEspecifico("+items[i].id+")'>Editar</button>";
+        myTable+="<td> <button onclick='borrarElementoFarm("+items[i].id+")'>Borrar</button>";
+        myTable+="<td> <button onclick='obtenerItemEspecificoFarm("+items[i].id+")'>Editar</button>";
         myTable+="</tr>";
     }
     myTable+="</table>";
@@ -84,7 +83,7 @@ function editarInformacion(){
         }
     });
 }
-function borrarElemento(idElemento){
+function borrarElementoFarm(idElemento){
     let myData={
         id:idElemento
     };
@@ -103,7 +102,7 @@ function borrarElemento(idElemento){
     });
 }
 
-function obtenerItemEspecifico(idItem){
+function obtenerItemEspecificoFarm(idItem){
     $.ajax({
         dataType: 'json',
         url:"https://g04005d2d06d35d-db202109232116.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/farm/farm/"+idItem,

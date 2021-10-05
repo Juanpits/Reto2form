@@ -5,23 +5,22 @@ function traerInformacionCliente(){
         datatype:"JSON",
         success:function(respuestaCliente){
             console.log(respuestaCliente);
-            pintarRespuesta(respuestaCliente.items)
+            pintarRespuestaCliente(respuestaCliente.items)
         }
 
     });
 }
 
-function pintarRespuesta(items){
+function pintarRespuestaCliente(items){
 
     let myTable ="<table>";
     for(i=0;i<items.length;i++){
         myTable+="<tr>";
-        // myTable+="<td>"+items[i].id+"</td>";
         myTable+="<td>"+items[i].name+"</td>";
         myTable+="<td>"+items[i].email+"</td>";
         myTable+="<td>"+items[i].age+"</td>";
-        myTable+="<td> <button onclick='borrarElemento("+items[i].id+")'>Borrar</button>";
-        myTable+="<td> <button onclick='obtenerItemEspecifico("+items[i].id+")'>Editar</button>";
+        myTable+="<td> <button onclick='borrarElementoCliente("+items[i].id+")'>Borrar</button>";
+        myTable+="<td> <button onclick='obtenerItemEspecificoCliente("+items[i].id+")'>Editar</button>";
         myTable+="</tr>";
     }
     myTable+="</table>";
@@ -79,7 +78,7 @@ function editarInformacionCliente(){
         }
     });
 }
-function borrarElemento(idElemento){
+function borrarElementoCliente(idElemento){
     let myData={
         id:idElemento
     };
@@ -98,7 +97,7 @@ function borrarElemento(idElemento){
     });
 }
 
-function obtenerItemEspecifico(idItem){
+function obtenerItemEspecificoCliente(idItem){
     $.ajax({
         dataType: 'json',
         url:"https://g04005d2d06d35d-db202109232116.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client/"+idItem,
